@@ -11,10 +11,10 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('departements', function (Blueprint $table) {
-            $table->string('id_departement')->primary();
-            $table->string('nama_departement', 50);
-            $table->string('deskripsi', 255)->nullable();
+        Schema::create('relasis', function (Blueprint $table) {
+            $table->string('id_relasi')->primary();
+            $table->string('id_project');
+            $table->string('id_user');
             $table->timestamps();
         });
     }
@@ -24,6 +24,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('departements');
+        Schema::dropIfExists('relasis');
     }
 };
